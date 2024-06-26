@@ -6,7 +6,7 @@ on:
       - main
 jobs:
   pybuildjob1:
-    runs-on: ip-172-31-59-136 
+    runs-on: runner 
     steps:
       - name: run sudo
         uses: sudo su -
@@ -30,8 +30,8 @@ jobs:
       - run: |
           set -x
 
-          sudo ocker version
-          sudo docker build -t sarvatsk8/pythonproject1 .
+           docker version
+           docker build -t sarvatsk8/pythonproject1 .
       - name: docker login
         uses: docker/login-action@v3
         with:
